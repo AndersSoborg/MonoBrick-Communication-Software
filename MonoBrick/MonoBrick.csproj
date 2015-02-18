@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1591BE2F-D4E4-4E5A-A1E6-A92FE5AA14F5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MonoBrick</RootNamespace>
+    <AssemblyName>MonoBrick</AssemblyName>
+    <ReleaseVersion>1.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <DocumentationFile>bin\Debug\MonoBrick.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>bin\Release\MonoBrick.xml</DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="LibUsbDotNet">
+      <HintPath>LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="commands.cs" />
+    <Compile Include="error.cs" />
+    <Compile Include="filsystem.cs" />
+    <Compile Include="connection.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="Network.cs" />
+    <Compile Include="usb.cs" />
+    <Compile Include="EV3\Brick.cs" />
+    <Compile Include="EV3\Commands.cs" />
+    <Compile Include="EV3\Error.cs" />
+    <Compile Include="EV3\FileSystem.cs" />
+    <Compile Include="EV3\Mailbox.cs" />
+    <Compile Include="EV3\Motor.cs" />
+    <Compile Include="EV3\Sensor.cs" />
+    <Compile Include="NXT\Brick.cs" />
+    <Compile Include="NXT\Commands.cs" />
+    <Compile Include="NXT\Error.cs" />
+    <Compile Include="NXT\Filesystem.cs" />
+    <Compile Include="NXT\I2C.cs" />
+    <Compile Include="NXT\Loopback.cs" />
+    <Compile Include="NXT\Mailbox.cs" />
+    <Compile Include="NXT\McBrick.cs" />
+    <Compile Include="NXT\McMotor.cs" />
+    <Compile Include="NXT\Motor.cs" />
+    <Compile Include="NXT\MotorControlProxy.cs" />
+    <Compile Include="NXT\Sensor.cs" />
+    <Compile Include="Bluetooth.cs" />
+    <Compile Include="EV3\Memory.cs" />
+    <Compile Include="IMotor.cs" />
+    <Compile Include="IVehicle.cs" />
+    <Compile Include="ISensor.cs" />
+    <Compile Include="IBrick.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="EV3\" />
+    <Folder Include="NXT\" />
+  </ItemGroup>
+</Project>

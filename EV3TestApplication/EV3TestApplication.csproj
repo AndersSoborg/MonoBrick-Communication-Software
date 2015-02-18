@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92255E97-A817-4CDE-8AEE-F058874F6E8D}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>EV3TestApplication</RootNamespace>
+    <AssemblyName>EV3TestApplication</AssemblyName>
+    <ReleaseVersion>1.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Externalconsole>true</Externalconsole>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="LibUsbDotNet">
+      <HintPath>..\MonoBrick\LibUsbDotNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="..\MonoBrick\Bluetooth.cs">
+      <Link>MonoBrick\Bluetooth.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\IMotor.cs">
+      <Link>MonoBrick\IMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\Network.cs">
+      <Link>MonoBrick\Network.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\Utilities.cs">
+      <Link>MonoBrick\Utilities.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\commands.cs">
+      <Link>MonoBrick\commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\connection.cs">
+      <Link>MonoBrick\connection.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\error.cs">
+      <Link>MonoBrick\error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\filsystem.cs">
+      <Link>MonoBrick\filsystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\usb.cs">
+      <Link>MonoBrick\usb.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Brick.cs">
+      <Link>MonoBrick\EV3\Brick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Commands.cs">
+      <Link>MonoBrick\EV3\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Error.cs">
+      <Link>MonoBrick\EV3\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\FileSystem.cs">
+      <Link>MonoBrick\EV3\FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Mailbox.cs">
+      <Link>MonoBrick\EV3\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Memory.cs">
+      <Link>MonoBrick\EV3\Memory.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Motor.cs">
+      <Link>MonoBrick\EV3\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Sensor.cs">
+      <Link>MonoBrick\EV3\Sensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Brick.cs">
+      <Link>MonoBrick\NXT\Brick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Commands.cs">
+      <Link>MonoBrick\NXT\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Error.cs">
+      <Link>MonoBrick\NXT\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Filesystem.cs">
+      <Link>MonoBrick\NXT\Filesystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\I2C.cs">
+      <Link>MonoBrick\NXT\I2C.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Loopback.cs">
+      <Link>MonoBrick\NXT\Loopback.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Mailbox.cs">
+      <Link>MonoBrick\NXT\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\McBrick.cs">
+      <Link>MonoBrick\NXT\McBrick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\McMotor.cs">
+      <Link>MonoBrick\NXT\McMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Motor.cs">
+      <Link>MonoBrick\NXT\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\MotorControlProxy.cs">
+      <Link>MonoBrick\NXT\MotorControlProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Sensor.cs">
+      <Link>MonoBrick\NXT\Sensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\IVehicle.cs">
+      <Link>MonoBrick\IVehicle.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\ISensor.cs">
+      <Link>MonoBrick\ISensor.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="MonoBrick\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\ReleaseResources\libintl-8.dll">
+      <Link>libintl-8.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ReleaseResources\libusb-1.0.0.dylib">
+      <Link>libusb-1.0.0.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ReleaseResources\libusb-1.0.a">
+      <Link>libusb-1.0.a</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ReleaseResources\libusb-1.0.la">
+      <Link>libusb-1.0.la</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ReleaseResources\hidapi.dll">
+      <Link>hidapi.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ReleaseResources\hidapi.dylib">
+      <Link>hidapi.dylib</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

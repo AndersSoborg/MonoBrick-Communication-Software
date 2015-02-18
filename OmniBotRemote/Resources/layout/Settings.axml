@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Connection Settings">
+        <ListPreference
+            android:key="bluetoothDevice"
+            android:id="@+id/bluetoothDevice"
+            android:title="Bluetooth Device"
+            android:defaultValue=""
+            android:summary="device name" />
+        <ListPreference
+            android:key="brickType"
+            android:id="@+id/brickType"
+            android:title="Brick Type"
+            android:defaultValue="NXT"
+            android:summary="NXT" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Vehicle">
+        <ListPreference
+            android:key="vehicleAngleOffset"
+            android:id="@+id/vehicleAngleOffset"
+            android:title="Zero degree placement"
+            android:defaultValue="Up"
+            android:summary="Up" />
+        <CheckBoxPreference
+            android:title="Send data to mailbox"
+            android:defaultValue="false"
+            android:key="sendVehicleDataToMailbox" />
+        <ListPreference
+            android:key="vehicleMailbox"
+            android:id="@+id/vehicleMailbox"
+            android:title="Mailbox"
+            android:defaultValue="Mailbox0"
+            android:summary="Mailbox0" />
+        <ListPreference
+            android:key="leftMotor"
+            android:id="@+id/leftMotor"
+            android:title="Left Motor"
+            android:defaultValue="Motor A"
+            android:summary="Motor A" />
+        <ListPreference
+            android:key="rightMotor"
+            android:id="@+id/rightMotor"
+            android:title="Right Motor"
+            android:defaultValue="Motor C"
+            android:summary="Motor C" />
+        <ListPreference
+            android:key="additionalMotor"
+            android:id="@+id/additionalMotor"
+            android:title="Additional Motor"
+            android:defaultValue="Motor B"
+            android:summary="Motor B" />
+        <CheckBoxPreference
+            android:title="Reverse Left Motor"
+            android:defaultValue="false"
+            android:key="reverseLeftMotor" />
+        <CheckBoxPreference
+            android:title="Reverse Right Motor"
+            android:defaultValue="false"
+            android:key="reverseRightMotor" />
+        <CheckBoxPreference
+            android:title="Reverse Additional Motor"
+            android:defaultValue="false"
+            android:key="reverseAdditionalMotor" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Sensor">
+        <CheckBoxPreference
+            android:title="Value to speech"
+            android:defaultValue="true"
+            android:key="sensorValueToSpeech" />
+    </PreferenceCategory>
+</PreferenceScreen>

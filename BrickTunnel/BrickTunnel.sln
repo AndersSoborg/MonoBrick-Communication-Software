@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrickTunnel", "BrickTunnel.csproj", "{E379C2C4-0051-45C3-B495-70C2C0E8B2BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E379C2C4-0051-45C3-B495-70C2C0E8B2BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E379C2C4-0051-45C3-B495-70C2C0E8B2BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E379C2C4-0051-45C3-B495-70C2C0E8B2BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E379C2C4-0051-45C3-B495-70C2C0E8B2BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = BrickTunnel.csproj
+	EndGlobalSection
+EndGlobal

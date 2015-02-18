@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.5" package="com.monobrick.remote">
+	<uses-sdk />
+	<application android:label="MonoBrick Remote" android:icon="@drawable/icon" android:theme="@style/Theme.Monobrick">
+	</application>
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+</manifest>

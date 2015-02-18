@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{44A31F5F-CE8D-4E4A-B95D-2885E7E890F7}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>AndroidTunnel</RootNamespace>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <AndroidApplication>True</AndroidApplication>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AssemblyName>AndroidTunnel</AssemblyName>
+    <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
+    <TargetFrameworkVersion>v2.3</TargetFrameworkVersion>
+    <ReleaseVersion>1.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <AssemblyOriginatorKeyFile>monoTunnel.keystore</AssemblyOriginatorKeyFile>
+    <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="LogActivity.cs" />
+    <Compile Include="SettingsActivity.cs" />
+    <Compile Include="ClientsActivity.cs" />
+    <Compile Include="OptionMenu.cs" />
+    <Compile Include="ClientAdapter.cs" />
+    <Compile Include="CameraView.cs" />
+    <Compile Include="Streaming\H263Stream.cs" />
+    <Compile Include="Streaming\MediaStream.cs" />
+    <Compile Include="Streaming\Packetizer.cs" />
+    <Compile Include="Streaming\RTSPServer.cs" />
+    <Compile Include="Streaming\Session.cs" />
+    <Compile Include="Streaming\UriParser.cs" />
+    <Compile Include="Streaming\VideoQuality.cs" />
+    <Compile Include="Streaming\VideoStream.cs" />
+    <Compile Include="Streaming\RtpSocket.cs" />
+    <Compile Include="Streaming\IStream.cs" />
+    <Compile Include="..\BrickTunnel\tunnel.cs">
+      <Link>tunnel.cs</Link>
+    </Compile>
+    <Compile Include="TunnelInstance.cs" />
+    <Compile Include="..\MonoBrick\IMotor.cs">
+      <Link>MonoBrick\IMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\ISensor.cs">
+      <Link>MonoBrick\ISensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\IVehicle.cs">
+      <Link>MonoBrick\IVehicle.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\Network.cs">
+      <Link>MonoBrick\Network.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\Utilities.cs">
+      <Link>MonoBrick\Utilities.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\commands.cs">
+      <Link>MonoBrick\commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\connection.cs">
+      <Link>MonoBrick\connection.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\error.cs">
+      <Link>MonoBrick\error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\filsystem.cs">
+      <Link>MonoBrick\filsystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Brick.cs">
+      <Link>MonoBrick\EV3\Brick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Commands.cs">
+      <Link>MonoBrick\EV3\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Error.cs">
+      <Link>MonoBrick\EV3\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\FileSystem.cs">
+      <Link>MonoBrick\EV3\FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Mailbox.cs">
+      <Link>MonoBrick\EV3\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Memory.cs">
+      <Link>MonoBrick\EV3\Memory.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Motor.cs">
+      <Link>MonoBrick\EV3\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Sensor.cs">
+      <Link>MonoBrick\EV3\Sensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Brick.cs">
+      <Link>MonoBrick\NXT\Brick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Commands.cs">
+      <Link>MonoBrick\NXT\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Error.cs">
+      <Link>MonoBrick\NXT\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Filesystem.cs">
+      <Link>MonoBrick\NXT\Filesystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\I2C.cs">
+      <Link>MonoBrick\NXT\I2C.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Loopback.cs">
+      <Link>MonoBrick\NXT\Loopback.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Mailbox.cs">
+      <Link>MonoBrick\NXT\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\McBrick.cs">
+      <Link>MonoBrick\NXT\McBrick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\McMotor.cs">
+      <Link>MonoBrick\NXT\McMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Motor.cs">
+      <Link>MonoBrick\NXT\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\MotorControlProxy.cs">
+      <Link>MonoBrick\NXT\MotorControlProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Sensor.cs">
+      <Link>MonoBrick\NXT\Sensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrickAndroid\usb.cs">
+      <Link>MonoBrick\usb.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrickAndroid\Bluetooth.cs">
+      <Link>MonoBrick\Bluetooth.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+    <None Include="Assets\AboutAssets.txt" />
+    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Resources\drawable\mdpiIcons\addClient.png" />
+    <None Include="Resources\drawable\mdpiIcons\addClientDisable.png" />
+    <None Include="Resources\drawable\mdpiIcons\clients.png" />
+    <None Include="Resources\drawable\mdpiIcons\exit.png" />
+    <None Include="Resources\drawable\mdpiIcons\log.png" />
+    <None Include="Resources\drawable\mdpiIcons\settings.png" />
+    <None Include="Resources\drawable\xhdpiIcons\addClient.png" />
+    <None Include="Resources\drawable\xhdpiIcons\addClientDisable.png" />
+    <None Include="Resources\drawable\xhdpiIcons\clients.png" />
+    <None Include="Resources\drawable\xhdpiIcons\exit.png" />
+    <None Include="Resources\drawable\xhdpiIcons\log.png" />
+    <None Include="Resources\drawable\xhdpiIcons\settings.png" />
+    <None Include="Resources\drawable\mdpiIcons\clientsDisable.png" />
+    <None Include="Resources\drawable\mdpiIcons\logDisable.png" />
+    <None Include="Resources\drawable\mdpiIcons\settingsDisable.png" />
+    <None Include="Resources\drawable\xhdpiIcons\clientsDisable.png" />
+    <None Include="Resources\drawable\xhdpiIcons\logDisable.png" />
+    <None Include="Resources\drawable\xhdpiIcons\settingsDisable.png" />
+    <None Include="Resources\drawable\xhdpiIcons\startDark.png" />
+    <None Include="Resources\drawable\xhdpiIcons\stopDark.png" />
+    <None Include="Resources\drawable\mdpiIcons\startDark.png" />
+    <None Include="Resources\drawable\mdpiIcons\stopDark.png" />
+    <None Include="Resources\drawable\xhdpiIcons\circle_white.png" />
+    <None Include="Resources\drawable\xhdpiIcons\circle_yellow_dark.png" />
+    <None Include="Resources\drawable\xhdpiIcons\circle_yellow_light.png" />
+    <None Include="Resources\drawable\xhdpiIcons\startWhite.png" />
+    <None Include="Resources\drawable\xhdpiIcons\stopWhite.png" />
+    <None Include="Resources\drawable\mdpiIcons\circle_white.png" />
+    <None Include="Resources\drawable\mdpiIcons\circle_yellow_dark.png" />
+    <None Include="Resources\drawable\mdpiIcons\circle_yellow_light.png" />
+    <None Include="Resources\drawable\mdpiIcons\startWhite.png" />
+    <None Include="Resources\drawable\mdpiIcons\stopWhite.png" />
+    <None Include="Resources\drawable\mdpiIcons\circle_green_light.png" />
+    <None Include="Resources\drawable\mdpiIcons\circle_red_dark.png" />
+    <None Include="Resources\drawable\xhdpiIcons\circle_green_light.png" />
+    <None Include="Resources\drawable\xhdpiIcons\circle_red_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\Main.axml" />
+    <AndroidResource Include="Resources\values\Strings.xml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\layout\Log.axml" />
+    <AndroidResource Include="Resources\layout\OptionMenu.axml" />
+    <AndroidResource Include="Resources\layout\Settings.axml" />
+    <AndroidResource Include="Resources\drawable\addClient.png" />
+    <AndroidResource Include="Resources\drawable\addClientDisable.png" />
+    <AndroidResource Include="Resources\drawable\clients.png" />
+    <AndroidResource Include="Resources\drawable\exit.png" />
+    <AndroidResource Include="Resources\drawable\log.png" />
+    <AndroidResource Include="Resources\drawable\settings.png" />
+    <AndroidResource Include="Resources\drawable\clientsDisable.png" />
+    <AndroidResource Include="Resources\drawable\logDisable.png" />
+    <AndroidResource Include="Resources\drawable\settingsDisable.png" />
+    <AndroidResource Include="Resources\drawable\LogTab.xml" />
+    <AndroidResource Include="Resources\drawable\SettingsTab.xml" />
+    <AndroidResource Include="Resources\layout\ClientListItem.axml" />
+    <AndroidResource Include="Resources\layout\ClientList.axml" />
+    <AndroidResource Include="Resources\layout\CameraView.axml" />
+    <AndroidResource Include="Resources\drawable\header.png" />
+    <AndroidResource Include="Resources\drawable\background.jpg" />
+    <AndroidResource Include="Resources\drawable\backrepeat.xml" />
+    <AndroidResource Include="Resources\drawable\circle_yellow_light.png" />
+    <AndroidResource Include="Resources\drawable\circle_yellow_dark.png" />
+    <AndroidResource Include="Resources\drawable\circle_white.png" />
+    <AndroidResource Include="Resources\drawable\startDark.png" />
+    <AndroidResource Include="Resources\drawable\startWhite.png" />
+    <AndroidResource Include="Resources\drawable\stopDark.png" />
+    <AndroidResource Include="Resources\drawable\stopWhite.png" />
+    <AndroidResource Include="Resources\drawable\buttonFocus.xml" />
+    <AndroidResource Include="Resources\drawable\circle_green_light.png" />
+    <AndroidResource Include="Resources\drawable\circle_red_dark.png" />
+    <AndroidResource Include="Resources\layout\toast.axml" />
+    <AndroidResource Include="Resources\drawable\toastBorder.axml" />
+    <AndroidResource Include="Resources\layout\BtDialog.axml" />
+    <AndroidResource Include="..\PCRemote\monobrickIcon64.png">
+      <Link>Resources\drawable\monobrickIcon64.png</Link>
+    </AndroidResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Resources\drawable\mdpiIcons\" />
+    <Folder Include="Resources\drawable\xhdpiIcons\" />
+    <Folder Include="Streaming\" />
+    <Folder Include="MonoBrick\" />
+  </ItemGroup>
+</Project>

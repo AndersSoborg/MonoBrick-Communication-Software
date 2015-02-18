@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{946BBDA4-5B1D-49A2-B988-D4C13667EAB0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PCRemote</RootNamespace>
+    <AssemblyName>MonoBrickRemote</AssemblyName>
+    <ReleaseVersion>1.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <PlatformTarget>x86</PlatformTarget>
+    <additionalargs>/res:bin/Debug/LibUsbDotNet.dll,LibUsbDotNet.dll</additionalargs>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <additionalargs>/res:bin/Release/LibUsbDotNet.dll,LibUsbDotNet.dll</additionalargs>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="glade-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="gtk-dotnet, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="LibUsbDotNet">
+      <HintPath>..\MonoBrick\LibUsbDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Net" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="gtk-gui\gui.stetic">
+      <LogicalName>gui.stetic</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="header.png" />
+    <EmbeddedResource Include="mono_logo.gif" />
+    <EmbeddedResource Include="monobrickIcon64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="gtk-gui\generated.cs" />
+    <Compile Include="MainWindow.cs" />
+    <Compile Include="gtk-gui\MainWindow.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="ComboBoxHelper.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="QueueThread.cs" />
+    <Compile Include="MotorPage.cs" />
+    <Compile Include="SensorPage.cs" />
+    <Compile Include="FilePage.cs" />
+    <Compile Include="BrickPage.cs" />
+    <Compile Include="NetworkHelper.cs" />
+    <Compile Include="Tunnel.cs" />
+    <Compile Include="AndroidPage.cs" />
+    <Compile Include="Vlc\Info.cs" />
+    <Compile Include="Vlc\Binding\LibVlc.cs" />
+    <Compile Include="Vlc\Binding\LibVlcConst.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_audio_output_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_event_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_event_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_logo_position_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_log_level_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_log_subscriber_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_marquee_position_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_media_stats_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_media_track_info_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_meta_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_module_description_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_navigate_mode_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_playback_mode_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_state_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_track_description_t.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_track_type_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_video_adjust_option_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_video_logo_option_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\libvlc_video_marquee_option_e.cs" />
+    <Compile Include="Vlc\Binding\Internal\NativeString.cs" />
+    <Compile Include="Vlc\Component\AudioMediaListPlayerComponent.cs" />
+    <Compile Include="Vlc\Component\AudioMediaPlayerComponent.cs" />
+    <Compile Include="Vlc\Log\LogEventListener.cs" />
+    <Compile Include="Vlc\Logger\Logger.cs" />
+    <Compile Include="Vlc\MediaList\MediaList.cs" />
+    <Compile Include="Vlc\MediaList\MediaListEventAdapter.cs" />
+    <Compile Include="Vlc\MediaList\MediaListEventListener.cs" />
+    <Compile Include="Vlc\MediaList\MediaListItem.cs" />
+    <Compile Include="Vlc\MediaList\Events\AbstractMediaListEvent.cs" />
+    <Compile Include="Vlc\MediaList\Events\MediaListEvent.cs" />
+    <Compile Include="Vlc\MediaList\Events\MediaListEventFactory.cs" />
+    <Compile Include="Vlc\MediaList\Events\MediaListItemAddedEvent.cs" />
+    <Compile Include="Vlc\MediaList\Events\MediaListItemDeletedEvent.cs" />
+    <Compile Include="Vlc\MediaList\Events\MediaListWillAddItemEvent.cs" />
+    <Compile Include="Vlc\MediaList\Events\MediaListWillDeleteItemEvent.cs" />
+    <Compile Include="Vlc\Player\AbstractMediaPlayer.cs" />
+    <Compile Include="Vlc\Player\AudioDevice.cs" />
+    <Compile Include="Vlc\Player\AudioOutput.cs" />
+    <Compile Include="Vlc\Player\AudioOutputDeviceType.cs" />
+    <Compile Include="Vlc\Player\AudioTrackInfo.cs" />
+    <Compile Include="Vlc\Player\DefaultMediaMeta.cs" />
+    <Compile Include="Vlc\Player\DefaultMediaPlayer.cs" />
+    <Compile Include="Vlc\Player\DeinterlaceMode.cs" />
+    <Compile Include="Vlc\Player\MediaDetails.cs" />
+    <Compile Include="Vlc\Player\MediaMeta.cs" />
+    <Compile Include="Vlc\Player\MediaPlayer.cs" />
+    <Compile Include="Vlc\Player\MediaPlayerEventAdapter.cs" />
+    <Compile Include="Vlc\Player\MediaPlayerEventListener.cs" />
+    <Compile Include="Vlc\Player\MediaPlayerFactory.cs" />
+    <Compile Include="Vlc\Player\ModuleDescription.cs" />
+    <Compile Include="Vlc\Player\SpuTrackInfo.cs" />
+    <Compile Include="Vlc\Player\TrackDescription.cs" />
+    <Compile Include="Vlc\Player\TrackInfo.cs" />
+    <Compile Include="Vlc\Player\UnknownTrackInfo.cs" />
+    <Compile Include="Vlc\Player\VideoTrackInfo.cs" />
+    <Compile Include="Vlc\Player\Embedded\DefaultEmbeddedMediaPlayer.cs" />
+    <Compile Include="Vlc\Player\Embedded\EmbeddedMediaPlayer.cs" />
+    <Compile Include="Vlc\Player\Embedded\FullScreenStrategy.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\ComponentIdVideoSurface.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\VideoSurface.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\VideoSurfaceAdapter.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\Gtk\GtkComponentIdVideoSurface.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\Linux\LinuxVideoSurfaceAdapter.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\Mac\MacVideoSurfaceAdapter.cs" />
+    <Compile Include="Vlc\Player\Embedded\VideoSurface\Windows\WindowsVideoSurfaceAdapter.cs" />
+    <Compile Include="Vlc\Player\Events\AbstractMediaPlayerEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaDurationChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaEndOfSubItemsEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaFreedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaMetaChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaNewEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaParsedChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerBackwardEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerBufferingEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerEncounteredErrorEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerEndReachedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerEventFactory.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerForwardEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerLengthChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerMediaChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerNothingSpecialEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerOpeningEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerPausableChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerPausedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerPlayingEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerPositionChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerSeekableChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerSnapshotTakenEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerStoppedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerTimeChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerTitleChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaPlayerVoutEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaStateChangedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaSubItemAddedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaSubItemFinishedEvent.cs" />
+    <Compile Include="Vlc\Player\Events\MediaSubItemPlayedEvent.cs" />
+    <Compile Include="Vlc\Player\Headless\DefaultHeadlessMediaPlayer.cs" />
+    <Compile Include="Vlc\Player\Headless\HeadlessMediaPlayer.cs" />
+    <Compile Include="Vlc\Player\List\DefaultMediaListPlayer.cs" />
+    <Compile Include="Vlc\Player\List\MediaListPlayer.cs" />
+    <Compile Include="Vlc\Player\List\MediaListPlayerEventAdapter.cs" />
+    <Compile Include="Vlc\Player\List\MediaListPlayerEventListener.cs" />
+    <Compile Include="Vlc\Player\List\MediaListPlayerMode.cs" />
+    <Compile Include="Vlc\Player\List\Events\AbstractMediaListPlayerEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListMediaDurationChangedEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListMediaFreedEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListMediaMetaChangedEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListMediaParsedChangedEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListMediaStateChangedEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListMediaSubItemAddedEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListPlayerEvent.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListPlayerEventFactory.cs" />
+    <Compile Include="Vlc\Player\List\Events\MediaListPlayerNextItemSetEvent.cs" />
+    <Compile Include="Vlc\Util\Concurrent\Runnable.cs" />
+    <Compile Include="Vlc\Util\Concurrent\SingleThreadExecutor.cs" />
+    <Compile Include="Vlc\Version\VersionNumber.cs" />
+    <Compile Include="KeyboardPage.cs" />
+    <Compile Include="MailboxPage.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="..\MonoBrick\Bluetooth.cs">
+      <Link>MonoBrick\Bluetooth.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\IMotor.cs">
+      <Link>MonoBrick\IMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\Network.cs">
+      <Link>MonoBrick\Network.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\Utilities.cs">
+      <Link>MonoBrick\Utilities.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\commands.cs">
+      <Link>MonoBrick\commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\connection.cs">
+      <Link>MonoBrick\connection.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\error.cs">
+      <Link>MonoBrick\error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\filsystem.cs">
+      <Link>MonoBrick\filsystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\usb.cs">
+      <Link>MonoBrick\usb.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Brick.cs">
+      <Link>MonoBrick\EV3\Brick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Commands.cs">
+      <Link>MonoBrick\EV3\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Error.cs">
+      <Link>MonoBrick\EV3\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\FileSystem.cs">
+      <Link>MonoBrick\EV3\FileSystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Mailbox.cs">
+      <Link>MonoBrick\EV3\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Memory.cs">
+      <Link>MonoBrick\EV3\Memory.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Motor.cs">
+      <Link>MonoBrick\EV3\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\EV3\Sensor.cs">
+      <Link>MonoBrick\EV3\Sensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Brick.cs">
+      <Link>MonoBrick\NXT\Brick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Commands.cs">
+      <Link>MonoBrick\NXT\Commands.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Error.cs">
+      <Link>MonoBrick\NXT\Error.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Filesystem.cs">
+      <Link>MonoBrick\NXT\Filesystem.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\I2C.cs">
+      <Link>MonoBrick\NXT\I2C.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Loopback.cs">
+      <Link>MonoBrick\NXT\Loopback.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Mailbox.cs">
+      <Link>MonoBrick\NXT\Mailbox.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\McBrick.cs">
+      <Link>MonoBrick\NXT\McBrick.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\McMotor.cs">
+      <Link>MonoBrick\NXT\McMotor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Motor.cs">
+      <Link>MonoBrick\NXT\Motor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\MotorControlProxy.cs">
+      <Link>MonoBrick\NXT\MotorControlProxy.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\NXT\Sensor.cs">
+      <Link>MonoBrick\NXT\Sensor.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\IVehicle.cs">
+      <Link>MonoBrick\IVehicle.cs</Link>
+    </Compile>
+    <Compile Include="..\MonoBrick\ISensor.cs">
+      <Link>MonoBrick\ISensor.cs</Link>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <VersionControlPolicy inheritsSet="Mono" />
+        </Policies>
+        <GtkDesignInfo generateGettext="False" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+  <ItemGroup>
+    <Folder Include="Vlc\" />
+    <Folder Include="MonoBrick\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MonoBrick\LibUsbDotNet.dll">
+      <Link>LibUsbDotNet.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

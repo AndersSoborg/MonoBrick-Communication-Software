@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backrepeat">
+    <LinearLayout
+        android:layout_marginTop="5.0dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/angleLabel"
+                android:gravity="center"
+                android:text="Angle: "
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff26100" />
+            <TextView
+                android:id="@+id/angleTextView"
+                android:gravity="right"
+                android:text="360.0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff26100" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/speedLabel"
+                android:gravity="center"
+                android:text="Speed: "
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff26100" />
+            <TextView
+                android:id="@+id/speedTextView"
+                android:gravity="right"
+                android:text="100.0"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff26100" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/seekLabel"
+                android:gravity="center"
+                android:text="Spin: "
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff26100" />
+            <TextView
+                android:gravity="right"
+                android:id="@+id/seekTextView"
+                android:text="100.0"
+                android:layout_width="40dp"
+                android:textSize="15dp"
+                android:layout_height="wrap_content"
+                android:textColor="#fff26100" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:src="@drawable/animation"
+        android:layout_marginLeft="5.0dp"
+        android:layout_marginRight="5.0dp"
+        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_weight="2"
+        android:id="@+id/circle" />
+    <SeekBar
+        android:layout_marginLeft="10.0dp"
+        android:layout_marginRight="10.0dp"
+        android:id="@+id/seekBar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:progressDrawable="@drawable/sliderFill"
+        android:thumb="@drawable/sliderButton" />
+    <LinearLayout
+        android:layout_marginTop="5.0dp"
+        android:layout_marginBottom="5.0dp"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/sensor1Button"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Sensor 1" />
+        <Button
+            android:id="@+id/sensor2Button"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Sensor 2" />
+        <Button
+            android:id="@+id/sensor3Button"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Sensor 3" />
+        <Button
+            android:id="@+id/sensor4Button"
+            android:textSize="12dp"
+            android:layout_weight="1"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="Sensor 4" />
+    </LinearLayout>
+</LinearLayout>

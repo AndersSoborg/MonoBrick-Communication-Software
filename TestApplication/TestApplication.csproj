@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{95F1547C-7FA7-4854-A8F2-2533AD9E5E04}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TestApplication</RootNamespace>
+    <AssemblyName>TestApplication</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <ReleaseVersion>1.6</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;LIBUSBDOTNET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Externalconsole>true</Externalconsole>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;LIBUSBDOTNET</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+    <Externalconsole>True</Externalconsole>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="LibUsbDotNet">
+      <HintPath>LibUsbDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bluetooth.cs" />
+    <Compile Include="IMotor.cs" />
+    <Compile Include="ISensor.cs" />
+    <Compile Include="IVehicle.cs" />
+    <Compile Include="Network.cs" />
+    <Compile Include="Utilities.cs" />
+    <Compile Include="commands.cs" />
+    <Compile Include="connection.cs" />
+    <Compile Include="error.cs" />
+    <Compile Include="filsystem.cs" />
+    <Compile Include="usb.cs" />
+    <Compile Include="EV3\Brick.cs" />
+    <Compile Include="EV3\Commands.cs" />
+    <Compile Include="EV3\Error.cs" />
+    <Compile Include="EV3\FileSystem.cs" />
+    <Compile Include="EV3\Mailbox.cs" />
+    <Compile Include="EV3\Memory.cs" />
+    <Compile Include="EV3\Motor.cs" />
+    <Compile Include="EV3\Sensor.cs" />
+    <Compile Include="NXT\Brick.cs" />
+    <Compile Include="NXT\Commands.cs" />
+    <Compile Include="NXT\Error.cs" />
+    <Compile Include="NXT\Filesystem.cs" />
+    <Compile Include="NXT\I2C.cs" />
+    <Compile Include="NXT\Loopback.cs" />
+    <Compile Include="NXT\Mailbox.cs" />
+    <Compile Include="NXT\McBrick.cs" />
+    <Compile Include="NXT\McMotor.cs" />
+    <Compile Include="NXT\Motor.cs" />
+    <Compile Include="NXT\MotorControlProxy.cs" />
+    <Compile Include="NXT\Sensor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="libusb-1.0.la">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="libusb-1.0.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="libusb-1.0.a">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="libusb-1.0.0.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="hidapi.dylib">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="hidapi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

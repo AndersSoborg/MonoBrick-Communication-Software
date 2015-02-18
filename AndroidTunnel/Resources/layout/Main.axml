@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backrepeat">
+    <View
+        android:id="@+id/separator"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/header" />
+    <TextView
+        android:id="@+id/statusSeperator"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:background="#6a6a6a"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Actions"
+        android:layout_marginBottom="10dp" />
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:id="@+id/startButton"
+            android:layout_height="65dp"
+            android:layout_width="65dp"
+            android:src="@drawable/startWhite"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="0dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/buttonFocus"
+            android:layout_alignParentLeft="true" />
+        <ImageButton
+            android:id="@+id/connectToClientButton"
+            android:layout_height="65dp"
+            android:layout_width="65dp"
+            android:src="@drawable/clientsDisable"
+            android:background="@drawable/buttonFocus"
+            android:layout_centerInParent="true"
+            android:layout_alignTop="@+id/startButton" />
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_height="65dp"
+            android:layout_width="65dp"
+            android:src="@drawable/settingsDisable"
+            android:background="@drawable/buttonFocus"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@+id/connectToClientButton"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/startButton" />
+    </RelativeLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/statusSeperator"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:background="#6a6a6a"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp" />
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/connectStatus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:text="Client is not connected"
+                android:layout_toRightOf="@+id/connectLight"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="#F26321" />
+            <ImageView
+                android:id="@+id/connectLight"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:src="@drawable/circle_white"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true" />
+            <TextView
+                android:id="@+id/streamingStatus"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="vertical"
+                android:text="Client is not connected"
+                android:layout_toRightOf="@+id/streamingLight"
+                android:layout_marginTop="7dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/connectLight"
+                android:textColor="#F26321" />
+            <ImageView
+                android:id="@+id/streamingLight"
+                android:layout_height="20dp"
+                android:layout_width="20dp"
+                android:src="@drawable/circle_white"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/connectLight" />
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/logSeperator"
+            style="?android:attr/listSeparatorTextViewStyle"
+            android:background="#6a6a6a"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Log Output"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp" />
+        <android.view.SurfaceView
+            android:id="@+id/smallcameraview"
+            android:layout_width="1px"
+            android:layout_height="1px" />
+        <ScrollView
+            android:id="@+id/logScrollView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp">
+            <TextView
+                android:id="@+id/log"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scrollbars="vertical"
+                android:text="This is the log output "
+                android:textColor="#F26321" />
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

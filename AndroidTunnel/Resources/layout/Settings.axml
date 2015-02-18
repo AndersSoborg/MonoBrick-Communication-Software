@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Tunnel Settings">
+        <EditTextPreference
+            android:summary="1500"
+            android:title="Network Port"
+            android:key="tunnelPort"
+            android:id="@+id/tunnelPort"
+            android:defaultValue="1500"
+            android:numeric="integer" />
+        <ListPreference
+            android:key="bluetoothDevice"
+            android:id="@+id/bluetoothDevice"
+            android:title="Bluetooth Device"
+            android:defaultValue=""
+            android:summary="device name" />
+        <CheckBoxPreference
+            android:title="Listen For Clients"
+            android:defaultValue="true"
+            android:key="listenForClients" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Streaming Settings">
+        <CheckBoxPreference
+            android:title="Enable Video stream"
+            android:defaultValue="true"
+            android:key="streamVideo" />
+        <EditTextPreference
+            android:summary="8086"
+            android:title="RTSP Port"
+            android:key="rtspPort"
+            android:id="@+id/rtspPort"
+            android:defaultValue="8086"
+            android:numeric="integer" />
+        <EditTextPreference
+            android:summary="9000"
+            android:title="Video Port"
+            android:key="videoPort"
+            android:id="@+id/videoPort"
+            android:defaultValue="9000"
+            android:numeric="integer" />
+        <ListPreference
+            android:key="videoResolution"
+            android:id="@+id/videoResolution"
+            android:title="Streaming Resolution"
+            android:defaultValue="640x480"
+            android:summary="Resolution" />
+        <ListPreference
+            android:key="videoQuality"
+            android:id="@+id/videoQuality"
+            android:title="Streaming Quality"
+            android:defaultValue="Normal"
+            android:summary="Quality" />
+        <ListPreference
+            android:key="frameRate"
+            android:id="@+id/frameRate"
+            android:title="Frame Rate"
+            android:defaultValue="25"
+            android:summary="25 fps" />
+    </PreferenceCategory>
+</PreferenceScreen>

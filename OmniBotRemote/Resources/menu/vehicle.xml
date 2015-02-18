@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menuRefresh"
+          android:title="Refresh"
+          android:icon="@drawable/refresh"
+          android:showAsAction="ifRoom" 
+          />
+    <item android:id="@+id/menuUpload"
+          android:title="Upload"
+          android:icon="@drawable/upload"
+          android:showAsAction="ifRoom"
+          />
+    <item android:id="@+id/menuFormat"
+          android:title="Format"
+          android:icon="@drawable/ic_action_hdd"
+          android:showAsAction="ifRoom" 
+          />
+    <item android:id="@+id/menuConnection"
+          android:title="Connect"
+          android:icon="@drawable/bluetooth_searching"
+          android:showAsAction="ifRoom" 
+          />
+    <item android:id="@+id/menuSettings"
+          android:title="Settings"
+          android:icon="@drawable/settings"
+          android:showAsAction="ifRoom"
+           />
+</menu>

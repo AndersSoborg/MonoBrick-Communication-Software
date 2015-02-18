@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/start"
+          android:icon="@drawable/play"
+          android:title="Start"/>
+    <item android:id="@+id/stop"
+          android:icon="@drawable/stop"
+          android:title="Stop"/>
+    <item android:id="@+id/delete"
+          android:icon="@drawable/discard"
+          android:title="Delete"/>
+    <item android:id="@+id/download"
+          android:icon="@drawable/download"
+          android:title="Download"/>
+     
+</menu>
+
